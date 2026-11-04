@@ -1,0 +1,693 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Paragon Ink</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../static/style.css"></head>
+<body class="ds"><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+
+
+
+<header class="top"><a class="brand" href="index.html"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#c8102e"/><path d="M10 24V8h7a5 5 0 0 1 0 10h-7" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paragon Ink</span></a>
+<nav class="topnav"><a href="index.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Dashboard</span></a><a href="book.html" class="on"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><rect x="7" y="13" width="4" height="4" rx=".5"/></svg><span>Appt Book</span></a><a href="pos.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h12l2-8H6.5"/></svg><span>Checkout</span></a><a href="pos_approvals.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg><span>Requests</span></a><a href="clients.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg><span>Clients</span></a><a href="services.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg><span>Services</span></a><a href="employees.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M9 6V4h6v2"/><circle cx="9" cy="13" r="2"/><path d="M6 18c.5-1.5 1.7-2.5 3-2.5s2.5 1 3 2.5M15 12h3M15 15h3"/></svg><span>Employees</span></a>
+<details class="more"><summary><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg><span>More</span></summary><div class="menu"><a href="reports.html">Reports</a><a href="pos_products.html">Products</a><a href="employees_schedule.html">Schedule</a><a href="pos_giftcards.html">Gift Cards</a><a href="#">Forms</a><a href="#">Settings</a><a href="pos_drawer.html">Cash Drawer</a><a href="pos_z.html">Z Report</a><a href="books.html">Books</a><a href="books_reconcile.html">Reconcile</a><a href="payroll.html">Payroll</a><a href="stripe.html">Stripe</a><a href="sales.html">DaySmart Import</a><a href="audit.html">Audit Log</a><a href="../index.html">Log out</a></div></details></nav>
+<span class="who">demo-manager · manager</span></header>
+<main>
+<div class="ph"><h1>Appointment Book</h1><span class="sp"></span>
+<div class="tabs" style="margin:0;border:0"><a href="book.html" class="">Day</a><a href="book_week.html" class="on">Week</a><a href="book_month.html" class="">Month</a><a href="#waitlist">Waitlist (2)</a></div></div>
+<div class="abar"><details class="cmenu"><summary class="btn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Create</summary><div class="menu">
+<a href="#new-appt">New Appointment</a><a href="#new-block">Time Block</a><a href="pos.html">New Transaction</a><a href="#new-wait">Add to Waitlist</a></div></details>
+<a class="btn ghost" href="book_week.html">TODAY</a><a class="icon-btn" href="book_week.html" aria-label="Previous"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><a class="icon-btn" href="book_week.html" aria-label="Next"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
+<span class="date">Nov 2 – Nov 8</span>
+<form class="row" style="margin-left:auto;gap:6px;display:flex"><input type="hidden" name="view" value="week"><input type="date" name="day" value="2026-11-04" onchange="this.form.submit()"><select name="artist" onchange="this.form.submit()"><option value="">All artists</option><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></form></div>
+
+
+<div class="grid-wrap"><div class="bk">
+<div class="gut"><div class="chd"></div><div>9 AM</div><div>10 AM</div><div>11 AM</div><div>12 PM</div><div>1 PM</div><div>2 PM</div><div>3 PM</div><div>4 PM</div><div>5 PM</div><div>6 PM</div><div>7 PM</div><div>8 PM</div><div>9 PM</div></div>
+
+<div class="col"><div class="chd"><small>Mon 2</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Mon 2</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Mon 2</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Mon 2</small>Casey Example</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Mon 2</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Tue 3</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Tue 3</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-1" style="top:264.0px;height:174.0px"><b>Ava Demo</b>12:00–14:00 · DEMO tattoo</a>
+<a class="ev blk" href="#blk-1" style="top:528.0px;height:86.0px"><b>Lunch</b>15:00–16:00</a>
+</div></div>
+<div class="col"><div class="chd"><small>Tue 3</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+<a class="ev blk" href="#blk-2" style="top:616.0px;height:86.0px"><b>Lunch</b>16:00–17:00</a>
+</div></div>
+<div class="col"><div class="chd"><small>Tue 3</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-7" style="top:352.0px;height:174.0px"><b>Ivy Demo</b>13:00–15:00 · DEMO tattoo</a>
+<a class="ev blk" href="#blk-3" style="top:528.0px;height:86.0px"><b>Lunch</b>15:00–16:00</a>
+</div></div>
+<div class="col"><div class="chd"><small>Tue 3</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+<a class="ev blk" href="#blk-4" style="top:616.0px;height:86.0px"><b>Lunch</b>16:00–17:00</a>
+</div></div>
+<div class="col"><div class="chd"><small>Wed 4</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Wed 4</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Wed 4</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-2" style="top:352.0px;height:174.0px"><b>Liam Demo</b>13:00–15:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Wed 4</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Wed 4</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-8" style="top:440.0px;height:174.0px"><b>Max Demo</b>14:00–16:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Thu 5</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Thu 5</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-9" style="top:528.0px;height:174.0px"><b>Nora Demo</b>15:00–17:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Thu 5</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-58" style="top:88.0px;height:130.0px"><b>Ava Demo</b>10:00–11:30 · DEMO sleeve (weekly) ↻</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Thu 5</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-3" style="top:440.0px;height:174.0px"><b>Mia Demo</b>14:00–16:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Thu 5</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Fri 6</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Fri 6</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Fri 6</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-10" style="top:616.0px;height:174.0px"><b>Owen Demo</b>16:00–18:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Fri 6</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Fri 6</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-4" style="top:528.0px;height:174.0px"><b>Noah Demo</b>15:00–17:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sat 7</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sat 7</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-5" style="top:616.0px;height:174.0px"><b>Zoe Demo</b>16:00–18:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sat 7</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sat 7</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+<a class="ev" href="#appt-11" style="top:264.0px;height:174.0px"><b>Ruby Demo</b>12:00–14:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sat 7</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px"></div><div class="cl" style="top:880.0px;bottom:0"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sun 8</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sun 8</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sun 8</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+<a class="ev" href="#appt-6" style="top:264.0px;height:174.0px"><b>Eli Demo</b>12:00–14:00 · DEMO tattoo</a>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sun 8</small>Casey Example</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col"><div class="chd"><small>Sun 8</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+<a class="ev" href="#appt-12" style="top:352.0px;height:174.0px"><b>Sam Demo</b>13:00–15:00 · DEMO tattoo</a>
+
+</div></div>
+</div></div>
+
+<div class="panel wl" id="waitlist" style="margin-top:16px"><h3>Waitlist</h3><div class="list">
+<div class="item"><span class="avatar">D</span><div style="flex:1">Demo Waiter One<small>555-0100 · Any artist · Weekends sample</small></div>
+<form method="post"><input type="hidden" name="kind" value="waitdone"><input type="hidden" name="wait_id" value="1"><input type="hidden" name="date" value="2026-11-04"><button class="btn ghost">Done</button></form></div>
+<div class="item"><span class="avatar">D</span><div style="flex:1">Demo Waiter Two<small>555-0100 · Any artist · Any evening sample</small></div>
+<form method="post"><input type="hidden" name="kind" value="waitdone"><input type="hidden" name="wait_id" value="2"><input type="hidden" name="date" value="2026-11-04"><button class="btn ghost">Done</button></form></div>
+</div><a class="btn ghost" href="#new-wait">Add to Waitlist</a></div>
+
+
+<div class="sheet-bg" id="new-appt"><form class="fsheet" method="post"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Create Appointment</h2><button>Schedule</button></div>
+<div class="body"><input type="hidden" name="kind" value="appt">
+<label>Client<select name="client_id"><option value="">+ New client (fill in below)</option><option value="1">Ava Demo · 555-01000</option><option value="6">Eli Demo · 555-01005</option><option value="7">Ivy Demo · 555-01006</option><option value="2">Liam Demo · 555-01001</option><option value="8">Max Demo · 555-01007</option><option value="3">Mia Demo · 555-01002</option><option value="4">Noah Demo · 555-01003</option><option value="9">Nora Demo · 555-01008</option><option value="10">Owen Demo · 555-01009</option><option value="11">Ruby Demo · 555-01010</option><option value="12">Sam Demo · 555-01011</option><option value="13">Tess Demo · 555-01012</option><option value="14">Vic Demo · 555-01013</option><option value="15">Wren Demo · 555-01014</option><option value="5">Zoe Demo · 555-01004</option></select></label>
+<div class="row" style="display:flex;gap:8px"><label style="flex:1">First name<input name="first"></label><label style="flex:1">Last name<input name="last"></label></div>
+<label>Mobile phone<input name="phone" type="tel"></label><label>Email<input name="email" type="email"></label>
+<label>Service<input name="service" list="svcs" placeholder="Tattoo session"><datalist id="svcs"><option value="Tattoo (hourly)"><option value="Tattoo (flat piece)"><option value="Touch-up"><option value="Piercing"><option value="Consult"></datalist></label>
+<label>Artist<select name="artist_id"><option value="1">Demo Owner</option><option value="2">Riley Demo</option><option value="3">Jordan Sample</option><option value="4">Casey Example</option><option value="5">Morgan Test</option></select></label>
+<div style="display:flex;gap:8px"><label style="flex:1">Date<input type="date" name="date" value="2026-11-04" required></label><label style="flex:1">Start<input type="time" name="time" value="12:00" required></label></div>
+<label>Length (minutes)<input name="minutes" type="number" value="120" min="15" max="720"></label>
+<label>Deposit collected ($)<input name="deposit" type="number" step="0.01" value="0" min="0"></label>
+<label>Notes<textarea name="notes" rows="3"></textarea></label>
+<fieldset class="rep" id="repeat"><legend>Repeat</legend><label>Repeats<select name="repeat"><option value="none">Does not repeat</option><option value="weekly">Every week</option><option value="biweekly">Every 2 weeks</option><option value="monthly">Every month</option></select></label>
+<div class="row" style="display:flex;gap:8px"><label style="flex:1">Ends<select name="ends"><option value="count">After a number of times</option><option value="until">On a date</option></select></label>
+<label style="flex:1">How many times<input name="count" type="number" min="1" max="52" value="4"></label><label style="flex:1">Until<input name="until" type="date"></label></div>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Skip conflicting dates and book the rest</label>
+<p class="muted small">Every date is checked against the artist's other appointments, time blocks and days off. If any clash, nothing is booked until you choose.</p></fieldset>
+<p class="muted">A text reminder is queued 24 hours before each one.</p></div></form></div>
+
+<div class="sheet-bg" id="new-block"><form class="fsheet" method="post"><div class="sh"><a href="#"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Time Block</h2><button>Save</button></div>
+<div class="body"><input type="hidden" name="kind" value="block">
+<label>Artist<select name="artist_id"><option value="1">Demo Owner</option><option value="2">Riley Demo</option><option value="3">Jordan Sample</option><option value="4">Casey Example</option><option value="5">Morgan Test</option></select></label>
+<label>Date<input type="date" name="date" value="2026-11-04" required></label>
+<div style="display:flex;gap:8px"><label style="flex:1">Start<input type="time" name="start" value="13:00" required></label><label style="flex:1">End<input type="time" name="end" value="14:00" required></label></div>
+<label>Reason<input name="reason" value="Lunch"></label></div></form></div>
+
+<div class="sheet-bg" id="new-wait"><form class="fsheet" method="post"><div class="sh"><a href="#"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Add to Waitlist</h2><button>Save</button></div>
+<div class="body"><input type="hidden" name="kind" value="wait"><input type="hidden" name="date" value="2026-11-04">
+<label>Name<input name="name" required></label><label>Phone<input name="phone" type="tel"></label>
+<label>Artist<select name="artist_id"><option value="">Any artist</option><option value="1">Demo Owner</option><option value="2">Riley Demo</option><option value="3">Jordan Sample</option><option value="4">Casey Example</option><option value="5">Morgan Test</option></select></label>
+<label>Wanted dates / times<input name="wanted" placeholder="Weekends, after 3pm"></label><label>Notes<textarea name="notes"></textarea></label></div></form></div>
+
+
+<div class="sheet-bg" id="appt-1"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Ava Demo</h2><a class="btn" href="pos_client_1.html">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-1" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-1" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-1" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-1" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Riley Demo<br>2026-11-03 12:00 – 14:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01000 · ava@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="1"><input type="hidden" name="date" value="2026-11-03">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="1">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-03"></label><label>Start<input type="time" name="time" value="12:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" selected>Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class=""><td>2026-12-10</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-12-03</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-26</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-19</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-12</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-05</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class="cur"><td>2026-11-03</td><td>Riley Demo</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>$332.84</td></tr><tr class=""><td>2026-10-04</td><td>Riley Demo</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$300.00</td></tr><tr class=""><td>2026-09-04</td><td>Riley Demo</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr><tr class=""><td>2026-08-05</td><td>Riley Demo</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$450.00</td></tr></table>
+<p class="muted small">10 appointments · lifetime paid $1,302.84</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-10-04 15:20 · demo-manager · appt 2026-10-04</div><div>DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="1"><input type="hidden" name="client_id" value="1"><input type="hidden" name="appt_id" value="1"><input type="hidden" name="date" value="2026-11-03"><textarea name="body" rows="2">DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="2"><input type="hidden" name="client_id" value="1"><input type="hidden" name="appt_id" value="1"><input type="hidden" name="date" value="2026-11-03"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="1"><input type="hidden" name="date" value="2026-11-03">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="1">This appointment (2026-11-03)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/1.png" target="_blank"><img src="../photos/1.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/2.png" target="_blank"><img src="../photos/2.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="1"><input type="hidden" name="appt_id" value="1"><input type="hidden" name="date" value="2026-11-03">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-7"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Ivy Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-7" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-7" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-7" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-7" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Casey Example<br>2026-11-03 13:00 – 15:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01006 · ivy@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="7"><input type="hidden" name="date" value="2026-11-03">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="7">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-03"></label><label>Start<input type="time" name="time" value="13:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" selected>Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-03</td><td>Casey Example</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-28</td><td>Casey Example</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-08-29</td><td>Casey Example</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr><tr class=""><td>2026-07-30</td><td>Casey Example</td><td>DEMO rose forearm<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $520.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-28 15:20 · demo-manager · appt 2026-09-28</div><div>DEMO: DEMO touch-up went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="13"><input type="hidden" name="client_id" value="7"><input type="hidden" name="appt_id" value="7"><input type="hidden" name="date" value="2026-11-03"><textarea name="body" rows="2">DEMO: DEMO touch-up went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="14"><input type="hidden" name="client_id" value="7"><input type="hidden" name="appt_id" value="7"><input type="hidden" name="date" value="2026-11-03"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="7"><input type="hidden" name="date" value="2026-11-03">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="7">This appointment (2026-11-03)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/13.png" target="_blank"><img src="../photos/13.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/14.png" target="_blank"><img src="../photos/14.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="7"><input type="hidden" name="appt_id" value="7"><input type="hidden" name="date" value="2026-11-03">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-2"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Liam Demo</h2><a class="btn" href="pos_client_2.html">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-2" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-2" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-2" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-2" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Jordan Sample<br>2026-11-04 13:00 – 15:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01001 · liam@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="2"><input type="hidden" name="date" value="2026-11-04">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="2">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-04"></label><label>Start<input type="time" name="time" value="13:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" selected>Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-04</td><td>Jordan Sample</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-10-03</td><td>Jordan Sample</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-09-03</td><td>Jordan Sample</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-08-04</td><td>Jordan Sample</td><td>DEMO rose forearm<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $450.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-10-03 15:20 · demo-artist · appt 2026-10-03</div><div>DEMO: DEMO touch-up went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="3"><input type="hidden" name="client_id" value="2"><input type="hidden" name="appt_id" value="2"><input type="hidden" name="date" value="2026-11-04"><textarea name="body" rows="2">DEMO: DEMO touch-up went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="4"><input type="hidden" name="client_id" value="2"><input type="hidden" name="appt_id" value="2"><input type="hidden" name="date" value="2026-11-04"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="2"><input type="hidden" name="date" value="2026-11-04">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="2">This appointment (2026-11-04)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/3.png" target="_blank"><img src="../photos/3.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/4.png" target="_blank"><img src="../photos/4.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="2"><input type="hidden" name="appt_id" value="2"><input type="hidden" name="date" value="2026-11-04">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-8"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Max Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-8" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-8" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-8" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-8" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Morgan Test<br>2026-11-04 14:00 – 16:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01007 · max@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="8"><input type="hidden" name="date" value="2026-11-04">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="8">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-04"></label><label>Start<input type="time" name="time" value="14:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" selected>Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-04</td><td>Morgan Test</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-27</td><td>Morgan Test</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$450.00</td></tr><tr class=""><td>2026-08-28</td><td>Morgan Test</td><td>DEMO rose forearm<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-07-29</td><td>Morgan Test</td><td>DEMO script wrist<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $820.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-27 15:20 · demo-manager · appt 2026-09-27</div><div>DEMO: DEMO flash piece went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="15"><input type="hidden" name="client_id" value="8"><input type="hidden" name="appt_id" value="8"><input type="hidden" name="date" value="2026-11-04"><textarea name="body" rows="2">DEMO: DEMO flash piece went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="16"><input type="hidden" name="client_id" value="8"><input type="hidden" name="appt_id" value="8"><input type="hidden" name="date" value="2026-11-04"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="8"><input type="hidden" name="date" value="2026-11-04">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="8">This appointment (2026-11-04)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/15.png" target="_blank"><img src="../photos/15.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/16.png" target="_blank"><img src="../photos/16.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="8"><input type="hidden" name="appt_id" value="8"><input type="hidden" name="date" value="2026-11-04">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-58"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Ava Demo</h2><a class="btn" href="pos_client_1.html">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-58" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-58" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-58" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-58" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO sleeve (weekly)</b> with Jordan Sample<br>2026-11-05 10:00 – 11:30<br>Deposit $0.00 · Status: booked<br><span class="tag">↻ Part of a repeating series</span></p>
+<p class="muted small">555-01000 · ava@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="58"><input type="hidden" name="date" value="2026-11-05">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="58">
+<label>Apply to<select name="scope"><option value="one">Only this appointment</option><option value="series">This and all upcoming in the series</option></select></label>
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-05"></label><label>Start<input type="time" name="time" value="10:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO sleeve (weekly)"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" selected>Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment(s)</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class=""><td>2026-12-10</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-12-03</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-26</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-19</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-12</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class="cur"><td>2026-11-05</td><td>Jordan Sample</td><td>DEMO sleeve (weekly)<small class="muted" style="display:block">DEMO weekly sleeve</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-11-03</td><td>Riley Demo</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>$332.84</td></tr><tr class=""><td>2026-10-04</td><td>Riley Demo</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$300.00</td></tr><tr class=""><td>2026-09-04</td><td>Riley Demo</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr><tr class=""><td>2026-08-05</td><td>Riley Demo</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$450.00</td></tr></table>
+<p class="muted small">10 appointments · lifetime paid $1,302.84</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-10-04 15:20 · demo-manager · appt 2026-10-04</div><div>DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="1"><input type="hidden" name="client_id" value="1"><input type="hidden" name="appt_id" value="58"><input type="hidden" name="date" value="2026-11-05"><textarea name="body" rows="2">DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="2"><input type="hidden" name="client_id" value="1"><input type="hidden" name="appt_id" value="58"><input type="hidden" name="date" value="2026-11-05"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="1"><input type="hidden" name="date" value="2026-11-05">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="58">This appointment (2026-11-05)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/1.png" target="_blank"><img src="../photos/1.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/2.png" target="_blank"><img src="../photos/2.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="1"><input type="hidden" name="appt_id" value="58"><input type="hidden" name="date" value="2026-11-05">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-3"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Mia Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-3" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-3" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-3" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-3" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Casey Example<br>2026-11-05 14:00 – 16:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01002 · mia@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="3"><input type="hidden" name="date" value="2026-11-05">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="3">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-05"></label><label>Start<input type="time" name="time" value="14:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" selected>Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-05</td><td>Casey Example</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-10-02</td><td>Casey Example</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$300.00</td></tr><tr class=""><td>2026-09-02</td><td>Casey Example</td><td>DEMO rose forearm<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-08-03</td><td>Casey Example</td><td>DEMO script wrist<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $670.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-10-02 15:20 · demo-manager · appt 2026-10-02</div><div>DEMO: DEMO flash piece went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="5"><input type="hidden" name="client_id" value="3"><input type="hidden" name="appt_id" value="3"><input type="hidden" name="date" value="2026-11-05"><textarea name="body" rows="2">DEMO: DEMO flash piece went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="6"><input type="hidden" name="client_id" value="3"><input type="hidden" name="appt_id" value="3"><input type="hidden" name="date" value="2026-11-05"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="3"><input type="hidden" name="date" value="2026-11-05">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="3">This appointment (2026-11-05)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/5.png" target="_blank"><img src="../photos/5.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/6.png" target="_blank"><img src="../photos/6.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="3"><input type="hidden" name="appt_id" value="3"><input type="hidden" name="date" value="2026-11-05">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-9"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Nora Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-9" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-9" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-9" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-9" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Riley Demo<br>2026-11-05 15:00 – 17:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01008 · nora@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="9"><input type="hidden" name="date" value="2026-11-05">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="9">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-05"></label><label>Start<input type="time" name="time" value="15:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" selected>Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-05</td><td>Riley Demo</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-26</td><td>Riley Demo</td><td>DEMO rose forearm<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-08-27</td><td>Riley Demo</td><td>DEMO script wrist<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr><tr class=""><td>2026-07-28</td><td>Riley Demo</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$300.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $670.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-26 15:20 · demo-manager · appt 2026-09-26</div><div>DEMO: DEMO rose forearm went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="17"><input type="hidden" name="client_id" value="9"><input type="hidden" name="appt_id" value="9"><input type="hidden" name="date" value="2026-11-05"><textarea name="body" rows="2">DEMO: DEMO rose forearm went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="18"><input type="hidden" name="client_id" value="9"><input type="hidden" name="appt_id" value="9"><input type="hidden" name="date" value="2026-11-05"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="9"><input type="hidden" name="date" value="2026-11-05">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="9">This appointment (2026-11-05)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/17.png" target="_blank"><img src="../photos/17.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/18.png" target="_blank"><img src="../photos/18.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="9"><input type="hidden" name="appt_id" value="9"><input type="hidden" name="date" value="2026-11-05">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-4"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Noah Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-4" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-4" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-4" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-4" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Morgan Test<br>2026-11-06 15:00 – 17:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01003 · noah@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="4"><input type="hidden" name="date" value="2026-11-06">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="4">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-06"></label><label>Start<input type="time" name="time" value="15:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" selected>Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-06</td><td>Morgan Test</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-10-01</td><td>Morgan Test</td><td>DEMO rose forearm<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-09-01</td><td>Morgan Test</td><td>DEMO script wrist<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-08-02</td><td>Morgan Test</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$450.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $750.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-10-01 15:20 · demo-manager · appt 2026-10-01</div><div>DEMO: DEMO rose forearm went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="7"><input type="hidden" name="client_id" value="4"><input type="hidden" name="appt_id" value="4"><input type="hidden" name="date" value="2026-11-06"><textarea name="body" rows="2">DEMO: DEMO rose forearm went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="8"><input type="hidden" name="client_id" value="4"><input type="hidden" name="appt_id" value="4"><input type="hidden" name="date" value="2026-11-06"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="4"><input type="hidden" name="date" value="2026-11-06">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="4">This appointment (2026-11-06)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/7.png" target="_blank"><img src="../photos/7.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/8.png" target="_blank"><img src="../photos/8.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="4"><input type="hidden" name="appt_id" value="4"><input type="hidden" name="date" value="2026-11-06">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-10"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Owen Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-10" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-10" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-10" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-10" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Jordan Sample<br>2026-11-06 16:00 – 18:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01009 · owen@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="10"><input type="hidden" name="date" value="2026-11-06">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="10">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-06"></label><label>Start<input type="time" name="time" value="16:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" selected>Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-06</td><td>Jordan Sample</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-25</td><td>Jordan Sample</td><td>DEMO script wrist<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$450.00</td></tr><tr class=""><td>2026-08-26</td><td>Jordan Sample</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr><tr class=""><td>2026-07-27</td><td>Jordan Sample</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $820.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-25 15:20 · demo-artist · appt 2026-09-25</div><div>DEMO: DEMO script wrist went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="19"><input type="hidden" name="client_id" value="10"><input type="hidden" name="appt_id" value="10"><input type="hidden" name="date" value="2026-11-06"><textarea name="body" rows="2">DEMO: DEMO script wrist went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="20"><input type="hidden" name="client_id" value="10"><input type="hidden" name="appt_id" value="10"><input type="hidden" name="date" value="2026-11-06"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="10"><input type="hidden" name="date" value="2026-11-06">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="10">This appointment (2026-11-06)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/19.png" target="_blank"><img src="../photos/19.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/20.png" target="_blank"><img src="../photos/20.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="10"><input type="hidden" name="appt_id" value="10"><input type="hidden" name="date" value="2026-11-06">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-11"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Ruby Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-11" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-11" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-11" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-11" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Casey Example<br>2026-11-07 12:00 – 14:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01010 · ruby@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="11"><input type="hidden" name="date" value="2026-11-07">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="11">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-07"></label><label>Start<input type="time" name="time" value="12:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" selected>Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-07</td><td>Casey Example</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-24</td><td>Casey Example</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$300.00</td></tr><tr class=""><td>2026-08-25</td><td>Casey Example</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr><tr class=""><td>2026-07-26</td><td>Casey Example</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $670.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-24 15:20 · demo-manager · appt 2026-09-24</div><div>DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="21"><input type="hidden" name="client_id" value="11"><input type="hidden" name="appt_id" value="11"><input type="hidden" name="date" value="2026-11-07"><textarea name="body" rows="2">DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="22"><input type="hidden" name="client_id" value="11"><input type="hidden" name="appt_id" value="11"><input type="hidden" name="date" value="2026-11-07"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="11"><input type="hidden" name="date" value="2026-11-07">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="11">This appointment (2026-11-07)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/21.png" target="_blank"><img src="../photos/21.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/22.png" target="_blank"><img src="../photos/22.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="11"><input type="hidden" name="appt_id" value="11"><input type="hidden" name="date" value="2026-11-07">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-5"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Zoe Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-5" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-5" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-5" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-5" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Riley Demo<br>2026-11-07 16:00 – 18:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01004 · zoe@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="5"><input type="hidden" name="date" value="2026-11-07">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="5">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-07"></label><label>Start<input type="time" name="time" value="16:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" selected>Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-07</td><td>Riley Demo</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-30</td><td>Riley Demo</td><td>DEMO script wrist<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$450.00</td></tr><tr class=""><td>2026-08-31</td><td>Riley Demo</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-08-01</td><td>Riley Demo</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $820.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-30 15:20 · demo-manager · appt 2026-09-30</div><div>DEMO: DEMO script wrist went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="9"><input type="hidden" name="client_id" value="5"><input type="hidden" name="appt_id" value="5"><input type="hidden" name="date" value="2026-11-07"><textarea name="body" rows="2">DEMO: DEMO script wrist went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="10"><input type="hidden" name="client_id" value="5"><input type="hidden" name="appt_id" value="5"><input type="hidden" name="date" value="2026-11-07"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="5"><input type="hidden" name="date" value="2026-11-07">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="5">This appointment (2026-11-07)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/9.png" target="_blank"><img src="../photos/9.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/10.png" target="_blank"><img src="../photos/10.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="5"><input type="hidden" name="appt_id" value="5"><input type="hidden" name="date" value="2026-11-07">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-6"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Eli Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-6" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-6" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-6" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-6" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Jordan Sample<br>2026-11-08 12:00 – 14:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01005 · eli@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="6"><input type="hidden" name="date" value="2026-11-08">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="6">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-08"></label><label>Start<input type="time" name="time" value="12:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" selected>Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-08</td><td>Jordan Sample</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-29</td><td>Jordan Sample</td><td>DEMO sleeve session<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr><tr class=""><td>2026-08-30</td><td>Jordan Sample</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$450.00</td></tr><tr class=""><td>2026-07-31</td><td>Jordan Sample</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $750.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-29 15:20 · demo-artist · appt 2026-09-29</div><div>DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="11"><input type="hidden" name="client_id" value="6"><input type="hidden" name="appt_id" value="6"><input type="hidden" name="date" value="2026-11-08"><textarea name="body" rows="2">DEMO: DEMO sleeve session went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="12"><input type="hidden" name="client_id" value="6"><input type="hidden" name="appt_id" value="6"><input type="hidden" name="date" value="2026-11-08"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="6"><input type="hidden" name="date" value="2026-11-08">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="6">This appointment (2026-11-08)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/11.png" target="_blank"><img src="../photos/11.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/12.png" target="_blank"><img src="../photos/12.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="6"><input type="hidden" name="appt_id" value="6"><input type="hidden" name="date" value="2026-11-08">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="appt-12"><div class="fsheet wide"><div class="sh"><a href="#" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Sam Demo</h2><a class="btn" href="#">Profile</a></div>
+<div class="body">
+<div class="tabs ch"><a href="#appt-12" data-t="a" class="on" onclick="return chTab(this)">Appointment</a><a href="#appt-12" data-t="h" class="" onclick="return chTab(this)">History</a><a href="#appt-12" data-t="n" class="" onclick="return chTab(this)">Notes</a><a href="#appt-12" data-t="p" class="" onclick="return chTab(this)">Photos</a></div>
+<section data-p="a"><p><b>DEMO tattoo</b> with Morgan Test<br>2026-11-08 13:00 – 15:00<br>Deposit $50.00 · Status: booked</p>
+<p class="muted small">555-01011 · sam@example.com</p>
+<form method="post" style="display:flex;gap:8px"><input type="hidden" name="kind" value="status"><input type="hidden" name="appt_id" value="12"><input type="hidden" name="date" value="2026-11-08">
+<select name="status"><option selected>booked</option><option >confirmed</option><option >arrived</option><option >done</option><option >no-show</option><option >cancelled</option></select><button>Update</button></form>
+<a class="btn" href="pos.html">Check Out</a>
+<details class="edit"><summary class="btn ghost">Edit / reschedule / cancel</summary><form method="post" class="stack"><input type="hidden" name="kind" value="editappt"><input type="hidden" name="appt_id" value="12">
+
+<label>Date (this appointment only)<input type="date" name="date" value="2026-11-08"></label><label>Start<input type="time" name="time" value="13:00"></label>
+<label>Length (minutes)<input type="number" name="minutes" min="15" max="720" placeholder="keep"></label><label>Service<input name="service" value="DEMO tattoo"></label>
+<label>Artist<select name="artist_id"><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" selected>Morgan Test</option></select></label>
+<label class="chk"><input type="checkbox" name="skip_conflicts" value="1" style="width:auto"> Save even if it conflicts</label>
+<div style="display:flex;gap:8px"><button name="action" value="save">Save changes</button><button name="action" value="cancel" class="ghost">Cancel appointment</button></div></form></details></section>
+<section data-p="h" hidden><h3>Appointment history</h3>
+<table class="hist"><tr><th>Date</th><th>Artist</th><th>Service</th><th>Status</th><th>Amount</th></tr><tr class="cur"><td>2026-11-08</td><td>Morgan Test</td><td>DEMO tattoo<small class="muted" style="display:block">sample</small></td><td>booked</td><td>—</td></tr><tr class=""><td>2026-09-23</td><td>Morgan Test</td><td>DEMO touch-up<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$220.00</td></tr><tr class=""><td>2026-08-24</td><td>Morgan Test</td><td>DEMO flash piece<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$300.00</td></tr><tr class=""><td>2026-07-25</td><td>Morgan Test</td><td>DEMO rose forearm<small class="muted" style="display:block">DEMO history</small></td><td>done</td><td>$150.00</td></tr></table>
+<p class="muted small">4 appointments · lifetime paid $670.00</p>
+</section>
+<section data-p="n" hidden><h3>Client notes</h3><div class="cnote"><div class="meta">2026-09-23 15:20 · demo-manager · appt 2026-09-23</div><div>DEMO: DEMO touch-up went smoothly, sat well. Healing check in 4 weeks.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="23"><input type="hidden" name="client_id" value="12"><input type="hidden" name="appt_id" value="12"><input type="hidden" name="date" value="2026-11-08"><textarea name="body" rows="2">DEMO: DEMO touch-up went smoothly, sat well. Healing check in 4 weeks.</textarea><button>Save</button></form></details></div><div class="cnote"><div class="meta">2026-09-05 10:00 · demo-manager · general</div><div>DEMO: prefers afternoon sessions. Sensitive to red ink.</div>
+<details><summary class="small">Edit</summary><form method="post"><input type="hidden" name="kind" value="note"><input type="hidden" name="note_id" value="24"><input type="hidden" name="client_id" value="12"><input type="hidden" name="appt_id" value="12"><input type="hidden" name="date" value="2026-11-08"><textarea name="body" rows="2">DEMO: prefers afternoon sessions. Sensitive to red ink.</textarea><button>Save</button></form></details></div>
+<form method="post" class="stack"><input type="hidden" name="kind" value="note"><input type="hidden" name="client_id" value="12"><input type="hidden" name="date" value="2026-11-08">
+<textarea name="body" rows="3" placeholder="Add a note" required></textarea><label>About<select name="appt_id"><option value="12">This appointment (2026-11-08)</option><option value="">General client note</option></select></label><button>Add note</button></form></section>
+<section data-p="p" hidden><h3>Photos</h3><div class="pgrid"><figure><a href="../photos/23.png" target="_blank"><img src="../photos/23.png" alt="reference photo" loading="lazy"></a><figcaption><b>Reference</b> · 2026-10-05<br>DEMO reference photo</figcaption></figure><figure><a href="../photos/24.png" target="_blank"><img src="../photos/24.png" alt="healed photo" loading="lazy"></a><figcaption><b>Healed</b> · 2026-10-05<br>DEMO healed photo</figcaption></figure></div>
+<form method="post" enctype="multipart/form-data" class="stack"><input type="hidden" name="kind" value="photo"><input type="hidden" name="client_id" value="12"><input type="hidden" name="appt_id" value="12"><input type="hidden" name="date" value="2026-11-08">
+<label>Type<select name="photo_kind"><option value="reference">Reference</option><option value="healed">Healed</option><option value="work">Finished work</option></select></label><input type="file" name="photo" accept="image/*" required><input name="note" placeholder="Caption (optional)"><button>Upload photo</button></form>
+<p class="muted small">ID photos and consent PDFs are never shown here.</p></section>
+</div></div></div>
+<div class="sheet-bg" id="blk-1"><div class="fsheet"><div class="sh"><a href="#"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Lunch</h2></div><div class="body"><p>2026-11-03 15:00 – 16:00</p>
+<form method="post"><input type="hidden" name="kind" value="delblock"><input type="hidden" name="block_id" value="1"><input type="hidden" name="date" value="2026-11-03"><button class="btn ghost">Remove time block</button></form></div></div></div><div class="sheet-bg" id="blk-3"><div class="fsheet"><div class="sh"><a href="#"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Lunch</h2></div><div class="body"><p>2026-11-03 15:00 – 16:00</p>
+<form method="post"><input type="hidden" name="kind" value="delblock"><input type="hidden" name="block_id" value="3"><input type="hidden" name="date" value="2026-11-03"><button class="btn ghost">Remove time block</button></form></div></div></div><div class="sheet-bg" id="blk-2"><div class="fsheet"><div class="sh"><a href="#"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Lunch</h2></div><div class="body"><p>2026-11-03 16:00 – 17:00</p>
+<form method="post"><input type="hidden" name="kind" value="delblock"><input type="hidden" name="block_id" value="2"><input type="hidden" name="date" value="2026-11-03"><button class="btn ghost">Remove time block</button></form></div></div></div><div class="sheet-bg" id="blk-4"><div class="fsheet"><div class="sh"><a href="#"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a><h2>Lunch</h2></div><div class="body"><p>2026-11-03 16:00 – 17:00</p>
+<form method="post"><input type="hidden" name="kind" value="delblock"><input type="hidden" name="block_id" value="4"><input type="hidden" name="date" value="2026-11-03"><button class="btn ghost">Remove time block</button></form></div></div></div>
+<script>function chTab(a){var b=a.closest('.body');b.querySelectorAll('.ch a').forEach(function(e){e.classList.toggle('on',e===a)});b.querySelectorAll('section[data-p]').forEach(function(s){s.hidden=s.dataset.p!==a.dataset.t});return false}</script>
+</main>
+<nav class="bottombar"><a href="index.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Dashboard</span></a><a href="book.html" class="on"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><rect x="7" y="13" width="4" height="4" rx=".5"/></svg><span>Appt Book</span></a><a href="pos.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h12l2-8H6.5"/></svg><span>Checkout</span></a><a href="clients.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg><span>Clients</span></a>
+<details class="more up"><summary><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg><span>More</span></summary><div class="menu sheet"><b class="sheet-h">More</b><a href="pos_approvals.html">Requests</a><a href="clients.html">Clients</a><a href="services.html">Services</a><a href="employees.html">Employees</a><a href="reports.html">Reports</a><a href="pos_products.html">Products</a><a href="employees_schedule.html">Schedule</a><a href="pos_giftcards.html">Gift Cards</a><a href="#">Forms</a><a href="#">Settings</a><a href="pos_drawer.html">Cash Drawer</a><a href="pos_z.html">Z Report</a><a href="books.html">Books</a><a href="books_reconcile.html">Reconcile</a><a href="payroll.html">Payroll</a><a href="stripe.html">Stripe</a><a href="sales.html">DaySmart Import</a><a href="audit.html">Audit Log</a><a href="../index.html">Log out</a></div></details></nav>
+<script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>
