@@ -1,0 +1,101 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="on">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main>
+<h1>Schedule</h1><p class="row"><a href="">← Prev week</a> <b>Week of 2026-11-02</b> <a href="">Next week →</a></p>
+<div class="scroll"><table class="cal"><tr><th>Artist</th><th>Mon Nov 02</th><th>Tue Nov 03</th><th>Wed Nov 04</th><th>Thu Nov 05</th><th>Fri Nov 06</th><th>Sat Nov 07</th><th>Sun Nov 08</th></tr>
+<tr><td>Demo Owner</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted"></small>
+</td></tr><tr><td>Riley Demo</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">12:00 Ava Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">15:00 Nora Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">16:00 Zoe Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted"></small>
+</td></tr><tr><td>Jordan Sample</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">13:00 Liam Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">16:00 Owen Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted"></small>
+<div class="appt">12:00 Eli Demo<br><small>DEMO tattoo · dep $50.00</small></div></td></tr><tr><td>Casey Example</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">13:00 Ivy Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">14:00 Mia Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">12:00 Ruby Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted"></small>
+</td></tr><tr><td>Morgan Test</td><td class="">
+<small class="muted"></small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">14:00 Max Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted">11:00-19:00</small>
+<div class="appt">15:00 Noah Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
+<small class="muted">11:00-19:00</small>
+</td><td class="">
+<small class="muted"></small>
+<div class="appt">13:00 Sam Demo<br><small>DEMO tattoo · dep $50.00</small></div></td></tr></table></div>
+<h2>New appointment</h2><form method="post" class="grid">
+<select name="client_id"><option value="">New client…</option><option value="1">Ava Demo</option><option value="2">Liam Demo</option><option value="3">Mia Demo</option><option value="4">Noah Demo</option><option value="5">Zoe Demo</option><option value="6">Eli Demo</option><option value="7">Ivy Demo</option><option value="8">Max Demo</option><option value="9">Nora Demo</option><option value="10">Owen Demo</option><option value="11">Ruby Demo</option><option value="12">Sam Demo</option><option value="13">Tess Demo</option><option value="14">Vic Demo</option><option value="15">Wren Demo</option></select>
+<input name="first" placeholder="First name (new client)"><input name="last" placeholder="Last name"><input name="phone" placeholder="Mobile for reminders">
+<select name="artist_id"><option value="1">Demo Owner</option><option value="2">Riley Demo</option><option value="3">Jordan Sample</option><option value="4">Casey Example</option><option value="5">Morgan Test</option></select>
+<input type="date" name="date" required><input type="time" name="time" required><input type="number" name="minutes" value="120" placeholder="Minutes">
+<input name="service" placeholder="Service / piece"><input type="number" step="0.01" name="deposit" placeholder="Deposit $"><input name="notes" placeholder="Notes"><button>Book</button></form>
+<h2>Reminder queue</h2><p class="muted">Texts are queued 24 hours before each appointment. Nothing is sent: the Telnyx SMS connection is a later step.</p>
+<table><tr><th>Send at</th><th>To</th><th>Message</th><th>Status</th></tr></table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

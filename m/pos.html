@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="on">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main><div class="subnav"><a href="pos.html">Checkout</a><a href="pos_drawer.html">Cash drawer</a><a href="pos_z.html">Z report</a><a href="pos_products.html">Products & services</a><a href="pos_giftcards.html">Gift cards & deposits</a><a href="pos_approvals.html">Artist approvals</a></div>
+<h1>Checkout</h1>
+<div class="note err">Cash drawer is closed. <a href="pos_drawer.html">Open it</a> before taking cash.</div>
+<div class="note">1 artist-entered sale(s) waiting for approval. <a href="pos_approvals.html">Review</a></div>
+<div class="card"><h3>New ticket</h3><form method="post" class="row">
+<select name="artist_id"><option value="">Artist…</option><option value="4">Casey Example</option><option value="1">Demo Owner</option><option value="3">Jordan Sample</option><option value="5">Morgan Test</option><option value="2">Riley Demo</option></select>
+<select name="client_id"><option value="">Existing client…</option><option value="1">Demo, Ava</option><option value="6">Demo, Eli</option><option value="7">Demo, Ivy</option><option value="2">Demo, Liam</option><option value="8">Demo, Max</option><option value="3">Demo, Mia</option><option value="4">Demo, Noah</option><option value="9">Demo, Nora</option><option value="10">Demo, Owen</option><option value="11">Demo, Ruby</option><option value="12">Demo, Sam</option><option value="13">Demo, Tess</option><option value="14">Demo, Vic</option><option value="15">Demo, Wren</option><option value="5">Demo, Zoe</option></select>
+<span class="muted">or new:</span><input name="first" placeholder="First"><input name="last" placeholder="Last"><input name="phone" placeholder="Phone"><input name="email" placeholder="Email">
+<button>Start ticket</button></form></div>
+<h2>Open tickets</h2><table><tr><th>#</th><th>Client</th><th>Artist</th><th>Total</th></tr></table>
+<h2>Today</h2><table><tr><th>#</th><th>Client</th><th>Artist</th><th>Status</th><th>Total</th></tr><tr><td><a href="pos_t_26.html">#26</a></td><td>Walk-in DEMO</td><td>Jordan Sample</td><td>paid · artist-entered (pending)</td><td>$180.00</td></tr><tr><td><a href="pos_t_21.html">#21</a></td><td>Eli Demo</td><td>Riley Demo</td><td>paid</td><td>$190.00</td></tr><tr><td><a href="pos_t_1.html">#1</a></td><td>Ava Demo</td><td>Riley Demo</td><td>paid</td><td>$332.84</td></tr></table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

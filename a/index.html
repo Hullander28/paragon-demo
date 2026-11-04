@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My portal</title><link rel="stylesheet" href="../static/style.css"></head>
+<body class="portal"><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div><header><div class="brand">Paragon · Jordan Sample</div><nav><a href="#sched">Schedule</a><a href="#sales">My sales</a><a href="#enter">Enter sale</a><a href="#hours">Hours</a><a href="#off">Time off</a><a href="../index.html">Log out</a></nav></header><main>
+
+<h2 id="sales">My sales and commission</h2>
+<div class="cards"><div class="card"><span>Today</span><b>$0.00</b><span>Commission $0.00 · 0 tickets</span><span class="small">+1 pending ($180.00)</span></div><div class="card"><span>This week</span><b>$612.00</b><span>Commission $330.00 · 2 tickets</span><span class="small">+1 pending ($180.00)</span></div><div class="card"><span>This month</span><b>$612.00</b><span>Commission $330.00 · 2 tickets</span><span class="small">+1 pending ($180.00)</span></div><div class="card"><span>Year to date</span><b>$1,724.00</b><span>Commission $935.00 · 6 tickets</span><span class="small">+1 pending ($180.00)</span></div></div>
+<p class="muted small">Approved sales only. Commission is 55% of art. Pending sales count once the owner approves them.</p>
+<h2 id="enter">Enter a sale</h2>
+<form method="post" class="stack"><input type="hidden" name="kind" value="sale">
+<input type="date" name="day" value="2026-11-03" required><input name="client_name" placeholder="Client name" value="">
+<input name="desc" placeholder="Piece (e.g. forearm rose)" value=""><input type="number" step="0.01" name="art" placeholder="Art amount $" value="" required>
+<input type="number" step="0.01" name="other" placeholder="Other non-art $ (optional)" value=""><input type="number" step="0.01" name="tip" placeholder="Tip $" value="">
+<select name="method"><option >cash</option><option >stripe</option><option >cashapp</option></select><input name="notes" placeholder="Notes" value=""><button>Save (goes to owner for approval)</button></form>
+<h3>My recent sales</h3><div class="appt">2026-11-03 · Walk-in DEMO · $180.00 · <b>pending</b> · <a href="">Edit</a></div><div class="appt">2026-11-02 ·  · $162.84 · <b>approved</b> · shop checkout</div><div class="appt">2026-11-02 ·  · $450.00 · <b>approved</b> · shop checkout</div><div class="appt">2026-10-29 ·  · $240.00 · <b>approved</b> · shop checkout</div><div class="appt">2026-10-25 ·  · $462.84 · <b>approved</b> · shop checkout</div><div class="appt">2026-10-21 ·  · $320.00 · <b>approved</b> · shop checkout</div><div class="appt">2026-10-17 ·  · $190.00 · <b>approved</b> · shop checkout</div>
+<h3>Imported from DaySmart</h3>
+<div class="cards">
+<div class="card"><b>$75,000.00</b><span>Art (services)</span></div>
+<div class="card"><b>$41,250.00</b><span>My commission · 55%</span></div>
+<div class="card"><b>330</b><span>Tickets</span></div>
+<div class="card"><b>$231.82</b><span>Average ticket</span></div></div>
+<p class="muted small">From DaySmart, 01/01/2026 - 10/31/2026. Commission is on art only. Tips are paid to you in cash from the drawer.</p>
+
+<h2 id="sched">My upcoming appointments</h2>
+<div class="appt big"><b>2026-11-04 13:00–15:00</b> · Liam Demo<br>DEMO tattoo · deposit $50.00 · booked <a href="">Edit</a> <form method="post" class="inline"><input type="hidden" name="kind" value="delappt"><input type="hidden" name="appt_id" value="2"><button>Cancel</button></form></div><div class="appt big"><b>2026-11-06 16:00–18:00</b> · Owen Demo<br>DEMO tattoo · deposit $50.00 · booked <a href="">Edit</a> <form method="post" class="inline"><input type="hidden" name="kind" value="delappt"><input type="hidden" name="appt_id" value="10"><button>Cancel</button></form></div><div class="appt big"><b>2026-11-08 12:00–14:00</b> · Eli Demo<br>DEMO tattoo · deposit $50.00 · booked <a href="">Edit</a> <form method="post" class="inline"><input type="hidden" name="kind" value="delappt"><input type="hidden" name="appt_id" value="6"><button>Cancel</button></form></div>
+
+<h2 id="form">Add appointment</h2>
+<form method="post" class="stack"><input type="hidden" name="kind" value="appt">
+<input name="first" placeholder="Client first name" required><input name="last" placeholder="Client last name" required><input name="phone" placeholder="Client mobile" inputmode="tel">
+<input type="date" name="date" value="" required><input type="time" name="time" value="" required>
+<input type="number" name="minutes" placeholder="Minutes" value="120"><input name="service" placeholder="Piece / service" value="">
+<input type="number" step="0.01" name="deposit" placeholder="Deposit $" value=""><input name="notes" placeholder="Notes" value="">
+<button>Save</button></form>
+<h2 id="off">My time off</h2>
+<form method="post" class="stack"><input type="hidden" name="kind" value="off"><input type="date" name="day" required><input name="reason" placeholder="Reason (optional)"><button>Add time off</button></form>
+<h2 id="hours">My work hours</h2>
+<form method="post" class="row"><input type="hidden" name="kind" value="hours"><input type="hidden" name="weekday" value="0"><b style="width:40px">Mon</b>
+<input type="time" name="start" value=""><input type="time" name="end" value=""><button>Save</button></form><form method="post" class="row"><input type="hidden" name="kind" value="hours"><input type="hidden" name="weekday" value="1"><b style="width:40px">Tue</b>
+<input type="time" name="start" value="11:00"><input type="time" name="end" value="19:00"><button>Save</button></form><form method="post" class="row"><input type="hidden" name="kind" value="hours"><input type="hidden" name="weekday" value="2"><b style="width:40px">Wed</b>
+<input type="time" name="start" value="11:00"><input type="time" name="end" value="19:00"><button>Save</button></form><form method="post" class="row"><input type="hidden" name="kind" value="hours"><input type="hidden" name="weekday" value="3"><b style="width:40px">Thu</b>
+<input type="time" name="start" value="11:00"><input type="time" name="end" value="19:00"><button>Save</button></form><form method="post" class="row"><input type="hidden" name="kind" value="hours"><input type="hidden" name="weekday" value="4"><b style="width:40px">Fri</b>
+<input type="time" name="start" value="11:00"><input type="time" name="end" value="19:00"><button>Save</button></form><form method="post" class="row"><input type="hidden" name="kind" value="hours"><input type="hidden" name="weekday" value="5"><b style="width:40px">Sat</b>
+<input type="time" name="start" value="11:00"><input type="time" name="end" value="19:00"><button>Save</button></form><form method="post" class="row"><input type="hidden" name="kind" value="hours"><input type="hidden" name="weekday" value="6"><b style="width:40px">Sun</b>
+<input type="time" name="start" value=""><input type="time" name="end" value=""><button>Save</button></form><p class="muted small">Leave both times blank and save to mark a day off every week.</p>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

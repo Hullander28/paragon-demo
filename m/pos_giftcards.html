@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main><div class="subnav"><a href="pos.html">Checkout</a><a href="pos_drawer.html">Cash drawer</a><a href="pos_z.html">Z report</a><a href="pos_products.html">Products & services</a><a href="pos_giftcards.html">Gift cards & deposits</a><a href="pos_approvals.html">Artist approvals</a></div>
+<h1>Gift cards & deposits</h1><p class="muted">Sell gift cards on a checkout ticket ("Sell a gift card"). Redeem them with the gift card box at payment.</p>
+<table><tr><th>Code</th><th>Issued</th><th>Initial</th><th>Balance</th><th>Ticket</th></tr></table>
+<h2>Take a booking deposit</h2><form method="post" class="row"><select name="client_id" required><option value="1">Demo, Ava</option><option value="2">Demo, Liam</option><option value="3">Demo, Mia</option><option value="4">Demo, Noah</option><option value="5">Demo, Zoe</option><option value="6">Demo, Eli</option><option value="7">Demo, Ivy</option><option value="8">Demo, Max</option><option value="9">Demo, Nora</option><option value="10">Demo, Owen</option><option value="11">Demo, Ruby</option><option value="12">Demo, Sam</option><option value="13">Demo, Tess</option><option value="14">Demo, Vic</option><option value="15">Demo, Wren</option></select>
+<select name="appointment_id"><option value="">Appointment (optional)</option><option value="1">2026-11-03T12:00 Ava Demo</option><option value="7">2026-11-03T13:00 Ivy Demo</option><option value="2">2026-11-04T13:00 Liam Demo</option><option value="8">2026-11-04T14:00 Max Demo</option><option value="3">2026-11-05T14:00 Mia Demo</option><option value="9">2026-11-05T15:00 Nora Demo</option><option value="4">2026-11-06T15:00 Noah Demo</option><option value="10">2026-11-06T16:00 Owen Demo</option><option value="11">2026-11-07T12:00 Ruby Demo</option><option value="5">2026-11-07T16:00 Zoe Demo</option><option value="6">2026-11-08T12:00 Eli Demo</option><option value="12">2026-11-08T13:00 Sam Demo</option></select>
+<select name="artist_id"><option value="4">Casey Example</option><option value="1">Demo Owner</option><option value="3">Jordan Sample</option><option value="5">Morgan Test</option><option value="2">Riley Demo</option></select><input name="amount" type="number" step="0.01" placeholder="$" required>
+<select name="method"><option value="cash">Cash</option><option value="stripe">Card (Stripe test)</option><option value="cashapp">Cash App</option></select><button>Record deposit</button></form>
+<table><tr><th>Date</th><th>Client</th><th>Amount</th><th>Method</th><th>Applied to</th></tr></table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

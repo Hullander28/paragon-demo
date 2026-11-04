@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="on">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main>
+<h1>Stripe (read-only)</h1><p class="muted">Reads charges and payouts with a restricted read-only key from the STRIPE_RESTRICTED_KEY environment variable. This app never creates charges, refunds or payouts.</p>
+<div class="cards">
+<div class="card"><b>$267,145.66</b><span>Card charges · 1500 succeeded</span></div>
+<div class="card"><b>$8,147.07</b><span>Stripe fees · 3.05%</span></div>
+<div class="card"><b>$0.00</b><span>Refunds</span></div>
+<div class="card"><b>$259,131.29</b><span>Payouts · 200</span></div></div>
+<h2>2026 by month</h2><table><tr><th>Month</th><th>Charges</th><th>Gross</th><th>Fees</th><th>Fee %</th><th>Refunds</th><th>Payouts</th></tr>
+<tr><td>2026-01</td><td>150</td><td>$25,832.68</td><td>$789.34</td><td>3.06%</td><td>$0.00</td><td>$25,057.70</td></tr><tr><td>2026-02</td><td>150</td><td>$26,995.31</td><td>$822.76</td><td>3.05%</td><td>$0.00</td><td>$26,185.45</td></tr><tr><td>2026-03</td><td>150</td><td>$27,786.22</td><td>$843.90</td><td>3.04%</td><td>$0.00</td><td>$26,952.63</td></tr><tr><td>2026-04</td><td>150</td><td>$26,831.17</td><td>$816.80</td><td>3.04%</td><td>$0.00</td><td>$26,026.24</td></tr><tr><td>2026-05</td><td>150</td><td>$27,902.01</td><td>$847.55</td><td>3.04%</td><td>$0.00</td><td>$27,064.95</td></tr><tr><td>2026-06</td><td>150</td><td>$25,898.15</td><td>$790.34</td><td>3.05%</td><td>$0.00</td><td>$25,121.21</td></tr><tr><td>2026-07</td><td>150</td><td>$27,919.77</td><td>$847.47</td><td>3.04%</td><td>$0.00</td><td>$27,082.17</td></tr><tr><td>2026-08</td><td>150</td><td>$25,763.68</td><td>$791.54</td><td>3.07%</td><td>$0.00</td><td>$24,990.77</td></tr><tr><td>2026-09</td><td>150</td><td>$26,939.29</td><td>$822.63</td><td>3.05%</td><td>$0.00</td><td>$26,131.11</td></tr><tr><td>2026-10</td><td>150</td><td>$25,277.38</td><td>$774.74</td><td>3.06%</td><td>$0.00</td><td>$24,519.06</td></tr></table>
+<p class="muted small">DEMO: invented Stripe totals. Pulled through the Stripe connector with read-only queries.</p>
+<h2>Live API key</h2><div class="note err">DEMO mode: live Stripe is disabled; showing invented totals.</div>
+<div class="note">Setup: in Stripe, go to Developers, then API keys, then Create restricted key. Give it Read access to Charges, Payouts and Balance only. Start the app with STRIPE_RESTRICTED_KEY=rk_... set.</div>
+
+
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

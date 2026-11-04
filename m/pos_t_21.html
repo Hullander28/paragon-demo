@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main><div class="subnav"><a href="pos.html">Checkout</a><a href="pos_drawer.html">Cash drawer</a><a href="pos_z.html">Z report</a><a href="pos_products.html">Products & services</a><a href="pos_giftcards.html">Gift cards & deposits</a><a href="pos_approvals.html">Artist approvals</a></div>
+<h1>Ticket #21 · paid</h1>
+<p>Client: <a href="#">Eli Demo</a> · Artist: Riley Demo · <a href="pos_t_21_receipt.html" target="_blank">Receipt</a></p>
+
+<table><tr><th>Item</th><th>Qty</th><th>Price</th><th>Line</th><th></th></tr>
+<tr><td>DEMO tattoo <small class="tag">art · commission</small></td><td>1</td><td>$150.00</td><td>$150.00</td>
+<td></td></tr>
+<tr><td colspan=3>Services</td><td>$150.00</td><td></td></tr><tr><td colspan=3>Products</td><td>$0.00</td><td></td></tr>
+<tr><td colspan=3>Discount</td><td>$0.00</td><td></td></tr><tr><td colspan=3>Sales tax (7% Bartow Co., products only)</td><td>$0.00</td><td></td></tr>
+<tr><td colspan=3>Tip (paid to artist in cash from drawer)</td><td>$40.00</td><td></td></tr>
+<tr class="tot"><td colspan=3>Total</td><td>$190.00</td><td></td></tr><tr><td colspan=3>Paid</td><td>$190.00</td><td></td></tr>
+<tr class="flag"><td colspan=3>Balance due</td><td>$0.00</td><td></td></tr></table>
+
+<h2>Payments</h2><table><tr><th>Method</th><th>Amount</th><th>Status</th><th>Ref</th></tr><tr><td>cash</td><td>$140.00</td><td>ok</td><td class="small"></td></tr><tr><td>cashapp</td><td>$50.00</td><td>ok</td><td class="small"></td></tr></table>
+
+
+<div class="card"><h3>Email receipt (stub)</h3><form method="post" action="#" class="row"><input name="to" value="eli@example.com" placeholder="client@email"><button>Queue email</button></form></div>
+<div class="card err"><h3>Owner only: refund or void</h3>
+<form method="post" action="#" class="row"><input name="amount" type="number" step="0.01" placeholder="Refund $"><select name="method"><option value="cash">Cash</option><option value="stripe">Card (Stripe, TEST mode)</option><option value="cashapp">Cash App</option><option value="giftcard">Gift card</option></select><input name="reason" placeholder="Reason"><label><input type="checkbox" name="restock" value="1"> restock products</label><button>Refund</button></form>
+<form method="post" action="#" class="row" onsubmit="return confirm('Void ticket #21?')"><input name="reason" placeholder="Void reason" required><button>Void ticket</button></form></div>
+<h2>Audit log</h2><table class="small"></table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

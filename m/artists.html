@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="on">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main>
+<h1>Artists</h1><p class="muted">Sales from the DaySmart import. Commission = services × rate; products are kept by the shop. Rates are editable.</p>
+<div class="note">Tips are paid to artists in cash from the drawer, card tips included. Commission is paid on art (services) only.</div>
+<div class="scroll"><table><tr><th>Artist</th><th>Rate</th><th>Services</th><th>Products</th><th>Tickets</th><th>Avg ticket</th><th>Artist commission</th><th>Shop keeps (services)</th></tr>
+<tr><td>Demo Owner <span class="tag">owner</span></td>
+<td>—</td>
+<td>$0.00</td><td>$0.00</td><td>0</td><td>$0.00</td>
+<td>—</td><td>$0.00</td></tr><tr><td>Riley Demo</td>
+<td><form method="post" class="inline"><input type="hidden" name="kind" value="rate"><input type="hidden" name="artist_id" value="2"><input name="rate" value="60" size="3">%</form></td>
+<td>$70,000.00</td><td>$1,500.00</td><td>320</td><td>$223.44</td>
+<td>$42,000.00</td><td>$28,000.00</td></tr><tr><td>Jordan Sample</td>
+<td><form method="post" class="inline"><input type="hidden" name="kind" value="rate"><input type="hidden" name="artist_id" value="3"><input name="rate" value="55" size="3">%</form></td>
+<td>$75,000.00</td><td>$1,500.00</td><td>330</td><td>$231.82</td>
+<td>$41,250.00</td><td>$33,750.00</td></tr><tr><td>Casey Example</td>
+<td><form method="post" class="inline"><input type="hidden" name="kind" value="rate"><input type="hidden" name="artist_id" value="4"><input name="rate" value="50" size="3">%</form></td>
+<td>$80,000.00</td><td>$1,500.00</td><td>340</td><td>$239.71</td>
+<td>$40,000.00</td><td>$40,000.00</td></tr><tr><td>Morgan Test</td>
+<td><form method="post" class="inline"><input type="hidden" name="kind" value="rate"><input type="hidden" name="artist_id" value="5"><input name="rate" value="40" size="3">%</form></td>
+<td>$85,000.00</td><td>$1,500.00</td><td>350</td><td>$247.14</td>
+<td>$34,000.00</td><td>$51,000.00</td></tr></table></div>
+<h2>Commission calculator</h2><div class="calc"><label>Riley Demo (60%)<input type="number" step="0.01" data-rate="60.0" oninput="this.nextElementSibling.textContent='Cut: $'+(this.value*this.dataset.rate/100).toFixed(2)"><small>Cut: $0.00</small></label><label>Jordan Sample (55%)<input type="number" step="0.01" data-rate="55.0" oninput="this.nextElementSibling.textContent='Cut: $'+(this.value*this.dataset.rate/100).toFixed(2)"><small>Cut: $0.00</small></label><label>Casey Example (50%)<input type="number" step="0.01" data-rate="50.0" oninput="this.nextElementSibling.textContent='Cut: $'+(this.value*this.dataset.rate/100).toFixed(2)"><small>Cut: $0.00</small></label><label>Morgan Test (40%)<input type="number" step="0.01" data-rate="40.0" oninput="this.nextElementSibling.textContent='Cut: $'+(this.value*this.dataset.rate/100).toFixed(2)"><small>Cut: $0.00</small></label></div>
+<h2>Work hours</h2><div class="scroll"><table><tr><th>Artist</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+<tr><td>Demo Owner</td><td>off</td><td>off</td><td>off</td><td>off</td><td>off</td><td>off</td><td>off</td></tr><tr><td>Riley Demo</td><td>off</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>off</td></tr><tr><td>Jordan Sample</td><td>off</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>off</td></tr><tr><td>Casey Example</td><td>off</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>off</td></tr><tr><td>Morgan Test</td><td>off</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>11:00-19:00</td><td>off</td></tr></table></div>
+<form method="post" class="row"><input type="hidden" name="kind" value="hours"><select name="artist_id"><option value="1">Demo Owner</option><option value="2">Riley Demo</option><option value="3">Jordan Sample</option><option value="4">Casey Example</option><option value="5">Morgan Test</option></select>
+<select name="weekday"><option value="0">Mon</option><option value="1">Tue</option><option value="2">Wed</option><option value="3">Thu</option><option value="4">Fri</option><option value="5">Sat</option><option value="6">Sun</option></select><input type="time" name="start"><input type="time" name="end"><button>Set hours</button></form>
+<h2>Days off</h2>
+<form method="post" class="row"><input type="hidden" name="kind" value="off"><select name="artist_id"><option value="1">Demo Owner</option><option value="2">Riley Demo</option><option value="3">Jordan Sample</option><option value="4">Casey Example</option><option value="5">Morgan Test</option></select><input type="date" name="day" required><input name="reason" placeholder="Reason"><button>Add day off</button></form>
+<h2>POS commission, year to date (approved sales only)</h2><table><tr><th>Artist</th><th>Tickets</th><th>Sales</th><th>Art</th><th>Rate</th><th>Commission</th><th>Pending approval</th></tr>
+<tr><td>Casey Example</td><td>6</td><td>$1,574.00</td><td>$1,550.00</td><td>50%</td><td>$775.00</td><td></td></tr><tr><td>Demo Owner</td><td>0</td><td>$0.00</td><td>$0.00</td><td>0%</td><td>$0.00</td><td></td></tr><tr><td>Jordan Sample</td><td>6</td><td>$1,724.00</td><td>$1,700.00</td><td>55%</td><td>$935.00</td><td><a href="pos_approvals.html">1 · $180.00</a></td></tr><tr><td>Morgan Test</td><td>6</td><td>$1,874.00</td><td>$1,850.00</td><td>40%</td><td>$740.00</td><td></td></tr><tr><td>Riley Demo</td><td>7</td><td>$1,686.00</td><td>$1,650.00</td><td>60%</td><td>$990.00</td><td></td></tr></table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

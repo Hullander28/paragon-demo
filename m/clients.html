@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="on">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main>
+<h1>Clients</h1><p><a class="btn" href="#">New client consent form</a></p>
+<table><tr><th>Name</th><th>DOB</th><th>Phone</th><th>Appointments</th><th>Consents</th></tr><tr><td><a href="pos_client_1.html">Ava Demo</a></td><td>1990-01-15</td><td>555-01000</td><td>1</td><td>0</td></tr><tr><td><a href="pos_client_2.html">Liam Demo</a></td><td>1991-02-15</td><td>555-01001</td><td>1</td><td>0</td></tr><tr><td><a href="#">Mia Demo</a></td><td>1992-03-15</td><td>555-01002</td><td>1</td><td>0</td></tr><tr><td><a href="#">Noah Demo</a></td><td>1993-04-15</td><td>555-01003</td><td>1</td><td>0</td></tr><tr><td><a href="#">Zoe Demo</a></td><td>1994-05-15</td><td>555-01004</td><td>1</td><td>0</td></tr><tr><td><a href="#">Eli Demo</a></td><td>1995-06-15</td><td>555-01005</td><td>1</td><td>0</td></tr><tr><td><a href="#">Ivy Demo</a></td><td>1996-07-15</td><td>555-01006</td><td>1</td><td>0</td></tr><tr><td><a href="#">Max Demo</a></td><td>1997-08-15</td><td>555-01007</td><td>1</td><td>0</td></tr><tr><td><a href="#">Nora Demo</a></td><td>1998-09-15</td><td>555-01008</td><td>1</td><td>0</td></tr><tr><td><a href="#">Owen Demo</a></td><td>1999-01-15</td><td>555-01009</td><td>1</td><td>0</td></tr><tr><td><a href="#">Ruby Demo</a></td><td>1990-02-15</td><td>555-01010</td><td>1</td><td>0</td></tr><tr><td><a href="#">Sam Demo</a></td><td>1991-03-15</td><td>555-01011</td><td>1</td><td>0</td></tr><tr><td><a href="#">Tess Demo</a></td><td>1992-04-15</td><td>555-01012</td><td>0</td><td>0</td></tr><tr><td><a href="#">Vic Demo</a></td><td>1993-05-15</td><td>555-01013</td><td>0</td><td>0</td></tr><tr><td><a href="#">Wren Demo</a></td><td>1994-06-15</td><td>555-01014</td><td>0</td><td>0</td></tr></table>
+<h2>Signed consent records</h2><table><tr><th>Client</th><th>Artist</th><th>Signed</th><th>IP</th><th>SHA-256</th><th>PDF</th></tr>
+</table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

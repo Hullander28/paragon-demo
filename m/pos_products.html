@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main><div class="subnav"><a href="pos.html">Checkout</a><a href="pos_drawer.html">Cash drawer</a><a href="pos_z.html">Z report</a><a href="pos_products.html">Products & services</a><a href="pos_giftcards.html">Gift cards & deposits</a><a href="pos_approvals.html">Artist approvals</a></div>
+<h1>Products & services</h1>
+<div class="card"><h3>Sales tax rate</h3><form method="post" class="row"><input type="hidden" name="kind" value="rate"><input name="rate" type="number" step="0.01" value="7">% <button>Save</button></form>
+<p class="muted small">7% = Georgia 4% + Bartow County 3% (Georgia DOR rate chart effective Oct 1, 2026, code 008 Bartow). Charged on retail products only. Tattoo services aren't taxed in GA. Confirm with your CPA.</p></div>
+<h2>Inventory</h2><table><tr><th>Product</th><th>SKU</th><th>Price</th><th>Cost</th><th>Stock</th><th>Taxed</th><th>Receive stock</th></tr>
+<tr class=""><td>DEMO Aftercare balm</td><td>D-AC</td><td>$12.00</td><td>$4.00</td><td>30</td><td>yes</td>
+<td><form method="post" class="inline"><input type="hidden" name="kind" value="stock"><input type="hidden" name="id" value="1"><input name="add" type="number" style="width:60px" placeholder="+/-"><button>Save</button></form></td></tr><tr class="flag"><td>DEMO Sticker</td><td>D-ST</td><td>$3.00</td><td>$0.50</td><td>2</td><td>yes</td>
+<td><form method="post" class="inline"><input type="hidden" name="kind" value="stock"><input type="hidden" name="id" value="3"><input name="add" type="number" style="width:60px" placeholder="+/-"><button>Save</button></form></td></tr><tr class=""><td>DEMO T-shirt</td><td>D-TS</td><td>$25.00</td><td>$9.00</td><td>12</td><td>yes</td>
+<td><form method="post" class="inline"><input type="hidden" name="kind" value="stock"><input type="hidden" name="id" value="2"><input name="add" type="number" style="width:60px" placeholder="+/-"><button>Save</button></form></td></tr></table>
+<form method="post" class="row"><input type="hidden" name="kind" value="add"><input name="name" placeholder="Product name" required><input name="sku" placeholder="SKU"><input name="price" type="number" step="0.01" placeholder="Price" required><input name="cost" type="number" step="0.01" placeholder="Cost"><input name="stock" type="number" placeholder="Stock"><label><input type="checkbox" name="taxable" value="1" checked> taxable</label><button>Add product</button></form>
+<h2>Services</h2><table><tr><th>Service</th><th>List price</th><th>Counts for commission (art)</th></tr><tr><td>Consult</td><td>$0.00</td><td>no</td></tr><tr><td>Piercing</td><td>$40.00</td><td>no</td></tr><tr><td>Tattoo (flat piece)</td><td>$0.00</td><td>yes</td></tr><tr><td>Tattoo (hourly)</td><td>$150.00</td><td>yes</td></tr><tr><td>Touch-up</td><td>$0.00</td><td>yes</td></tr></table>
+<form method="post" class="row"><input type="hidden" name="kind" value="svc"><input name="name" placeholder="Service" required><input name="price" type="number" step="0.01" placeholder="Price"><label><input type="checkbox" name="artwork" value="1" checked> art (commission)</label><button>Add service</button></form>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

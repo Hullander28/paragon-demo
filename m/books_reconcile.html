@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="on">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main>
+<h1>Reconcile: DaySmart vs bank</h1><p class="muted">DaySmart period 01/01/2026 - 10/31/2026; bank data 2026-01-01 to 2026-10-28.</p>
+<table><tr><th></th><th>DaySmart (net)</th><th>Bank deposits</th><th>Gap</th><th>Gap %</th></tr>
+<tr><td>Card</td><td>$230,000.00</td><td>$259,131.34 <small>Stripe payouts</small></td><td>-$29,131.34</td><td>-12.7%</td></tr>
+<tr class="flag"><td>Cash</td><td>$62,000.00</td><td>$52,780.40 <small>branch cash deposits</small></td><td><b>$9,219.60</b></td><td>14.9%</td></tr></table>
+<table><tr><th>Cash check</th><th>Amount</th></tr>
+<tr><td>DaySmart cash taken in (net)</td><td>$62,000.00</td></tr>
+<tr><td>Less tips paid to artists in cash from the drawer (all DaySmart withheld tips, card tips included)</td><td>-$21,000.00</td></tr>
+<tr><td>Expected cash deposits</td><td>$41,000.00</td></tr>
+<tr><td>Branch cash deposits at the bank</td><td>$52,780.40</td></tr>
+<tr class="flag"><td><b>Unexplained cash gap</b></td><td><b>-$11,780.40</b></td></tr></table>
+<div class="note err"><b>Remaining gap: -$11,780.40.</b> the owner pays all tips in cash from the drawer, so those are taken out above. What's left may be in the other deposits or the Cash App money under review. The raw gap before tips was $9,219.60. Some may be in other deposits ($0.00 of counter deposits, Zelle and card-machine Cash App) or the $0.00 of Cash App transfers still under review, or cash paid out to artists. </div>
+<h2>Card: DaySmart → Stripe → bank</h2><table><tr><th>Step</th><th>Amount</th></tr>
+<tr><td>DaySmart card sales, Jan 1 to Nov 3</td><td>$230,000.00</td></tr>
+<tr><td>Stripe card charges, Jan 1 to Nov 3 (1500)</td><td>$267,145.66</td></tr>
+<tr><td>Difference, DaySmart minus Stripe</td><td>-$37,145.66</td></tr>
+<tr><td>Stripe fees</td><td>-$8,147.07 (3.05%)</td></tr>
+<tr><td>Stripe refunds</td><td>$0.00</td></tr>
+<tr><td>Stripe payouts, Jan to Oct</td><td>$259,131.29</td></tr>
+<tr class="flag"><td>Bank Stripe deposits, Jan to Oct</td><td>$259,131.34 · gap -$0.05</td></tr></table>
+<div class="note">The card gap (-12.7%) is mostly Stripe's processing fees, shown above with the real Stripe totals. Card tips are paid out in cash, so they're counted in the cash check above.</div>
+<h2>POS (this app's own checkout)</h2><table><tr><th>Line</th><th>Amount</th></tr>
+<tr><td>Cash sales + cash deposits</td><td>$2,834.20</td></tr><tr><td>− Cash refunds</td><td>$0.00</td></tr><tr><td>− Tips paid out in cash</td><td>$0.00</td></tr><tr><td>− Paid outs</td><td>$0.00</td></tr>
+<tr class="tot"><td>Cash that should reach the bank</td><td>$2,834.20</td></tr><tr><td>Drawer over/short (closed drawers)</td><td>-$3.00</td></tr>
+<tr><td>Card (Stripe, TEST)</td><td>$3,861.36</td></tr><tr><td>Cash App</td><td>$650.00</td></tr><tr><td>Gift cards redeemed</td><td>$0.00</td></tr><tr><td>Sales tax collected, owed to GA DOR</td><td>$7.56</td></tr></table>
+<p class="muted small">When POS replaces DaySmart, these numbers take over the DaySmart rows above. The P&L stays bank-based so income isn't counted twice; POS sales appear in the CPA export as memo lines.</p>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

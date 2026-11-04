@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main><div class="subnav"><a href="pos.html">Checkout</a><a href="pos_drawer.html">Cash drawer</a><a href="pos_z.html">Z report</a><a href="pos_products.html">Products & services</a><a href="pos_giftcards.html">Gift cards & deposits</a><a href="pos_approvals.html">Artist approvals</a></div>
+<h1>Z report · 2026-11-03</h1><form class="row"><input type="date" name="day" value="2026-11-03"><button>Show</button><button type="button" onclick="print()">Print</button></form>
+<table><tr><td>Tickets</td><td>2 (0 void)</td></tr><tr><td>Services</td><td>$450.00</td></tr><tr><td>Products</td><td>$12.00</td></tr><tr><td>Discounts</td><td>$0.00</td></tr>
+<tr><td>Sales tax collected (owed to GA DOR)</td><td>$0.84</td></tr><tr><td>Tips</td><td>$60.00</td></tr><tr class="tot"><td>Gross taken</td><td>$522.84</td></tr><tr><td>Refunds</td><td>$0.00</td></tr></table>
+<h2>By payment type</h2><table><tr><td>cash</td><td>$422.84</td></tr><tr><td>cashapp</td><td>$100.00</td></tr></table>
+<h2>By artist</h2><table><tr><th>Artist</th><th>Tickets</th><th>Sales</th><th>Art</th><th>Commission</th><th>Tips</th></tr><tr><td>Riley Demo</td><td>2</td><td>$462.00</td><td>$450.00</td><td>$270.00</td><td>$60.00</td></tr></table>
+<h2>Drawer</h2><table><tr><th>Opened</th><th>Closed</th><th>Expected</th><th>Counted</th><th>Over/short</th><th>Tips paid out</th></tr></table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

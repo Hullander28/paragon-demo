@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="on">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main>
+<h1>Sales (DaySmart)</h1>
+<p class="muted">Imported DEMO.csv · period 01/01/2026 - 10/31/2026 · 2026-11-03T19:24:47.648038</p>
+<div class="cards">
+<div class="card"><b>$0.00</b><span>Total sales</span></div>
+<div class="card"><b>$310,000.00</b><span>Services</span></div>
+<div class="card"><b>$8,200.00</b><span>Products</span></div>
+<div class="card"><b>$21,000.00</b><span>Tips (withheld)</span></div>
+<div class="card"><b>$62,000.00</b><span>Cash (net)</span></div>
+<div class="card"><b>$230,000.00</b><span>Card (net)</span></div></div>
+<h2>By payment type</h2><table><tr><th>Type</th><th>In</th><th>Out</th><th>Net</th><th>Share</th></tr>
+<tr><td>Visa</td><td>$160,000.00</td><td>$0.00</td><td>$160,000.00</td><td>54.8%</td></tr><tr><td>Mastercard</td><td>$70,000.00</td><td>$0.00</td><td>$70,000.00</td><td>24.0%</td></tr><tr><td>Cash</td><td>$62,000.00</td><td>$0.00</td><td>$62,000.00</td><td>21.2%</td></tr></table>
+<div class="note">This DaySmart export is one total for the whole period, so monthly totals can't be split out from it. Export the same report one month at a time (or the daily "Sales by Day" report) and import each file here to fill in monthly views.</div>
+<h2>Import a DaySmart export</h2><form method="post" action="#" enctype="multipart/form-data" class="row"><input type="file" name="file" accept=".csv"><button>Import CSV</button></form>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>

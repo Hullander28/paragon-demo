@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Shop System</title><link rel="stylesheet" href="../static/style.css"></head><body><div style="background:#222;color:#ffd54f;text-align:center;padding:6px;font:600 14px sans-serif;position:sticky;top:0;z-index:100">Demo preview: buttons don't save · <a href="../index.html" style="color:#fff">Switch view</a></div><div class="demo">DEMO: sample data only. Fake clients and sales, no real financials. Payments are disabled.</div>
+<header><div class="brand">Paragon Shop System <span class="tag">demo-manager · manager</span> <span class="tag">v1 · local · bank read-only · Stripe TEST</span></div>
+<nav>
+<a href="index.html" class="">Dashboard</a>
+<a href="pos.html" class="">POS</a>
+<a href="sales.html" class="">Sales</a>
+<a href="artists.html" class="">Artists</a>
+<a href="schedule.html" class="">Schedule</a>
+<a href="clients.html" class="">Clients</a>
+<a href="books.html" class="">Books</a>
+<a href="books_review.html" class="">Review</a>
+<a href="books_reconcile.html" class="">Reconcile</a>
+<a href="payroll.html" class="">Payroll</a>
+<a href="stripe.html" class="">Stripe</a>
+<a href="#" class="">Logins</a>
+<a href="audit.html" class="">Audit log</a>
+<a href="../index.html" class="">Log out</a></nav></header>
+<main><div class="subnav"><a href="pos.html">Checkout</a><a href="pos_drawer.html">Cash drawer</a><a href="pos_z.html">Z report</a><a href="pos_products.html">Products & services</a><a href="pos_giftcards.html">Gift cards & deposits</a><a href="pos_approvals.html">Artist approvals</a></div>
+<h1>Ava Demo</h1><p>555-01000 · ava@example.com · DOB 1990-01-15 · client since 2026-01-05</p>
+<h2>Tickets</h2><table><tr><th>#</th><th>Date</th><th>Artist</th><th>Status</th><th>Total</th></tr><tr><td><a href="pos_t_1.html">#1</a></td><td>2026-11-03</td><td>Riley Demo</td><td>paid</td><td>$332.84</td></tr><tr><td><a href="#">#16</a></td><td>2026-10-19</td><td>Morgan Test</td><td>paid</td><td>$482.84</td></tr></table>
+<p>Lifetime spend: $815.68</p>
+<h2>Appointments</h2><table><tr><td>2026-11-03T12:00</td><td>Riley Demo</td><td>DEMO tattoo</td><td>booked</td><td>$50.00</td></tr></table>
+<h2>Consent forms</h2>
+<h2>Deposits & gift cards</h2><table></table>
+</main><script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>
