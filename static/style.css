@@ -114,3 +114,13 @@ button.ghost{background:#fff;color:var(--acc-d);border:1px solid var(--acc)}
 @media(max-width:820px){.md{min-height:70px;padding:2px}.mev{font-size:10px;padding:1px 2px}.mev small{display:none}.mgrid .mh{font-size:11px;padding:4px 0}.shop .slot{flex-wrap:wrap}.shop .slot b,.shop .slot .art{width:auto}}
 .sheet-bg{z-index:120}
 .fsheet label.chk{flex-direction:row;align-items:center;gap:8px;color:#222}
+
+/* books / owner power */
+.opbadge{background:var(--acc);color:#fff;font-weight:700;font-size:11px;letter-spacing:.08em;padding:4px 8px;border-radius:3px;margin-right:6px}
+.entsw{display:flex;gap:0;margin:0 0 12px;border:1px solid #111;border-radius:6px;overflow:hidden;width:max-content;max-width:100%}.entsw a{padding:7px 12px;text-decoration:none;color:#111;font-size:13px;white-space:nowrap}.entsw a.on{background:#111;color:#fff}
+.datebar{margin:6px 0 12px}.datebar label{display:flex;gap:6px;align-items:center;font-size:13px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}.panel{border:1px solid var(--line);border-radius:6px;padding:14px;background:#fff}
+table.rpt tr.tot td{font-weight:700;border-top:2px solid #111}table.rpt tr.sec td{background:#111;color:#fff;font-weight:600}.tag.ok{background:#1f7a3a;color:#fff}
+.blist{display:flex;flex-direction:column;gap:8px}.bline{border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:4px;padding:8px 10px;background:#fff}.bline.matched{border-left-color:#1f7a3a}.bline.categorized{border-left-color:#111}.bline.excluded{opacity:.6}
+.bl-top{display:flex;justify-content:space-between;font-size:13px;color:var(--mute)}.bl-top b{font-size:16px;color:#111}.bl-p{margin:2px 0 6px}
+.stub{max-width:620px;margin:0 auto;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}.stub>*:not(.stub-h){margin-left:16px;margin-right:16px}.stub-h{background:#111;color:#fff;display:flex;justify-content:space-between;padding:12px 16px;border-bottom:3px solid var(--acc)}.stub table{width:calc(100% - 32px)}
+@media(max-width:820px){.two-col{grid-template-columns:1fr}.entsw a{padding:7px 8px;font-size:12px}.datebar{flex-wrap:wrap}}
