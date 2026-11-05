@@ -9,88 +9,355 @@
 <details class="more"><summary><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg><span>More</span></summary><div class="menu"><a href="reports.html">Reports</a><a href="pos_products.html">Products</a><a href="employees_schedule.html">Schedule</a><a href="pos_giftcards.html">Gift Cards</a><a href="#">Forms</a><a href="#">Settings</a><a href="pos_drawer.html">Cash Drawer</a><a href="pos_z.html">Z Report</a><a href="payroll.html">Payroll</a><a href="sales.html">DaySmart Import</a><a href="audit.html">Audit Log</a><a href="../index.html">Log out</a></div></details></nav>
 <span class="who">demo-manager · manager</span></header>
 <main>
-<h1>Schedule</h1><p class="row"><a href="">← Prev week</a> <b>Week of 2026-11-02</b> <a href="">Next week →</a></p>
-<div class="scroll"><table class="cal"><tr><th>Artist</th><th>Mon Nov 02</th><th>Tue Nov 03</th><th>Wed Nov 04</th><th>Thu Nov 05</th><th>Fri Nov 06</th><th>Sat Nov 07</th><th>Sun Nov 08</th></tr>
-<tr><td>Demo Owner</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted"></small>
-</td></tr><tr><td>Riley Demo</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">12:00 Ava Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">15:00 Nora Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">16:00 Zoe Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted"></small>
-</td></tr><tr><td>Jordan Sample</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">13:00 Liam Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">10:00 Ava Demo<br><small>DEMO sleeve (weekly)</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">16:00 Owen Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted"></small>
-<div class="appt">12:00 Eli Demo<br><small>DEMO tattoo · dep $50.00</small></div></td></tr><tr><td>Casey Example</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">13:00 Ivy Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">14:00 Mia Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">12:00 Ruby Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted"></small>
-</td></tr><tr><td>Morgan Test</td><td class="">
-<small class="muted"></small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">14:00 Max Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted">11:00-19:00</small>
-<div class="appt">15:00 Noah Demo<br><small>DEMO tattoo · dep $50.00</small></div></td><td class="">
-<small class="muted">11:00-19:00</small>
-</td><td class="">
-<small class="muted"></small>
-<div class="appt">13:00 Sam Demo<br><small>DEMO tattoo · dep $50.00</small></div></td></tr></table></div>
-<h2>New appointment</h2><form method="post" class="grid">
+
+
+<div class="ph bookph"><h1>Appointment Book</h1>
+<div class="tabs booktabs">
+<a href="schedule.html" class="">Day</a>
+<a href="schedule.html" class="on">Week</a>
+<a href="schedule.html" class="">Month</a>
+</div></div>
+<div class="abar bookbar">
+<a class="btn" href="#new-appt"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Create</a>
+<a class="btn ghost" href="schedule.html">TODAY</a>
+<a class="icon-btn" href="schedule.html" aria-label="Previous"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+<a class="icon-btn" href="schedule.html" aria-label="Next"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
+<span class="date">Nov 2 – Nov 8</span>
+<form class="row bookpick" method="get" action="#">
+<input type="hidden" name="view" value="week">
+<input type="date" name="day" value="2026-11-05" aria-label="Date">
+<select name="artist" onchange="this.form.submit()" aria-label="Artist"><option value="">All artists</option><option value="1" >Demo Owner</option><option value="2" >Riley Demo</option><option value="3" >Jordan Sample</option><option value="4" >Casey Example</option><option value="5" >Morgan Test</option></select>
+</form></div>
+
+<p class="muted small">Shop appointment book. Stripes are days off or hours nobody is scheduled. Open a block to edit it in the appointment book.</p>
+
+<div class="grid-wrap" tabindex="0" role="region" aria-label="Appointment book. Swipe sideways for more artists."><div class="bk">
+<div class="gut"><div class="chd"></div>
+<div>9 AM</div><div>10 AM</div><div>11 AM</div><div>12 PM</div><div>1 PM</div><div>2 PM</div><div>3 PM</div><div>4 PM</div><div>5 PM</div><div>6 PM</div><div>7 PM</div><div>8 PM</div><div>9 PM</div></div>
+
+<div class="col" data-artist="1"><div class="chd"><small>Mon 2</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="2"><div class="chd"><small>Mon 2</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="3"><div class="chd"><small>Mon 2</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="4"><div class="chd"><small>Mon 2</small>Casey Example</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="5"><div class="chd"><small>Mon 2</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="1"><div class="chd"><small>Tue 3</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="2"><div class="chd"><small>Tue 3</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:264.0px;height:174.0px"><b>Ava Demo</b>12:00–14:00 · DEMO tattoo</a>
+
+
+
+<div class="cl blockshade" style="top:528.0px;height:88.0px" title="Lunch"></div>
+<a class="ev blk" href="book.html" style="top:528.0px;height:86.0px"><b>Lunch</b>15:00–16:00</a>
+
+
+</div></div>
+<div class="col" data-artist="3"><div class="chd"><small>Tue 3</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+<div class="cl blockshade" style="top:616.0px;height:88.0px" title="Lunch"></div>
+<a class="ev blk" href="book.html" style="top:616.0px;height:86.0px"><b>Lunch</b>16:00–17:00</a>
+
+
+</div></div>
+<div class="col" data-artist="4"><div class="chd"><small>Tue 3</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:352.0px;height:174.0px"><b>Ivy Demo</b>13:00–15:00 · DEMO tattoo</a>
+
+
+
+<div class="cl blockshade" style="top:528.0px;height:88.0px" title="Lunch"></div>
+<a class="ev blk" href="book.html" style="top:528.0px;height:86.0px"><b>Lunch</b>15:00–16:00</a>
+
+
+</div></div>
+<div class="col" data-artist="5"><div class="chd"><small>Tue 3</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+<div class="cl blockshade" style="top:616.0px;height:88.0px" title="Lunch"></div>
+<a class="ev blk" href="book.html" style="top:616.0px;height:86.0px"><b>Lunch</b>16:00–17:00</a>
+
+
+</div></div>
+<div class="col" data-artist="1"><div class="chd"><small>Wed 4</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="2"><div class="chd"><small>Wed 4</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="3"><div class="chd"><small>Wed 4</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:352.0px;height:174.0px"><b>Liam Demo</b>13:00–15:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="4"><div class="chd"><small>Wed 4</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="5"><div class="chd"><small>Wed 4</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:440.0px;height:174.0px"><b>Max Demo</b>14:00–16:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="1"><div class="chd today"><small>Thu 5</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="2"><div class="chd today"><small>Thu 5</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:528.0px;height:174.0px"><b>Nora Demo</b>15:00–17:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="3"><div class="chd today"><small>Thu 5</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:88.0px;height:130.0px"><b>Ava Demo</b>10:00–11:30 · DEMO sleeve (weekly) ↻</a>
+
+
+
+</div></div>
+<div class="col" data-artist="4"><div class="chd today"><small>Thu 5</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:440.0px;height:174.0px"><b>Mia Demo</b>14:00–16:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="5"><div class="chd today"><small>Thu 5</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="1"><div class="chd"><small>Fri 6</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="2"><div class="chd"><small>Fri 6</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="3"><div class="chd"><small>Fri 6</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:616.0px;height:174.0px"><b>Owen Demo</b>16:00–18:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="4"><div class="chd"><small>Fri 6</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="5"><div class="chd"><small>Fri 6</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:528.0px;height:174.0px"><b>Noah Demo</b>15:00–17:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="1"><div class="chd"><small>Sat 7</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="2"><div class="chd"><small>Sat 7</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:616.0px;height:174.0px"><b>Zoe Demo</b>16:00–18:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="3"><div class="chd"><small>Sat 7</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="4"><div class="chd"><small>Sat 7</small>Casey Example</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:264.0px;height:174.0px"><b>Ruby Demo</b>12:00–14:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="5"><div class="chd"><small>Sat 7</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+
+
+<div class="cl" style="top:0;height:176.0px" title="Not scheduled"></div><div class="cl" style="top:880.0px;bottom:0" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="1"><div class="chd"><small>Sun 8</small>Demo Owner</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="2"><div class="chd"><small>Sun 8</small>Riley Demo</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="3"><div class="chd"><small>Sun 8</small>Jordan Sample</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:264.0px;height:174.0px"><b>Eli Demo</b>12:00–14:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+<div class="col" data-artist="4"><div class="chd"><small>Sun 8</small>Casey Example</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+</div></div>
+<div class="col" data-artist="5"><div class="chd"><small>Sun 8</small>Morgan Test</div>
+<div class="body" style="height:1144px">
+<div class="cl" style="top:0;height:100%" title="Not scheduled"></div>
+
+
+
+<a class="ev" href="book.html" style="top:352.0px;height:174.0px"><b>Sam Demo</b>13:00–15:00 · DEMO tattoo</a>
+
+
+
+</div></div>
+</div></div>
+
+<h2 id="new-appt">New appointment</h2>
+<form method="post" class="grid">
+<input type="hidden" name="view" value="week">
 <select name="client_id"><option value="">New client…</option><option value="1">Ava Demo</option><option value="2">Liam Demo</option><option value="3">Mia Demo</option><option value="4">Noah Demo</option><option value="5">Zoe Demo</option><option value="6">Eli Demo</option><option value="7">Ivy Demo</option><option value="8">Max Demo</option><option value="9">Nora Demo</option><option value="10">Owen Demo</option><option value="11">Ruby Demo</option><option value="12">Sam Demo</option><option value="13">Tess Demo</option><option value="14">Vic Demo</option><option value="15">Wren Demo</option></select>
 <input name="first" placeholder="First name (new client)"><input name="last" placeholder="Last name"><input name="phone" placeholder="Mobile for reminders">
 <select name="artist_id"><option value="1">Demo Owner</option><option value="2">Riley Demo</option><option value="3">Jordan Sample</option><option value="4">Casey Example</option><option value="5">Morgan Test</option></select>
-<input type="date" name="date" required><input type="time" name="time" required><input type="number" name="minutes" value="120" placeholder="Minutes">
+<input type="date" name="date" value="2026-11-05" required><input type="time" name="time" required><input type="number" name="minutes" value="120" placeholder="Minutes">
 <input name="service" placeholder="Service / piece"><input type="number" step="0.01" name="deposit" placeholder="Deposit $"><input name="notes" placeholder="Notes"><button>Book</button></form>
 <h2>Reminder queue</h2><p class="muted">Texts are queued 24 hours before each appointment. Nothing is sent: the Telnyx SMS connection is a later step.</p>
 <table><tr><th>Send at</th><th>To</th><th>Message</th><th>Status</th></tr></table>
 </main>
 <nav class="bottombar"><a href="index.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Dashboard</span></a><a href="book.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><rect x="7" y="13" width="4" height="4" rx=".5"/></svg><span>Appt Book</span></a><a href="pos.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h12l2-8H6.5"/></svg><span>Checkout</span></a><a href="clients.html" class=""><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg><span>Clients</span></a>
 <details class="more up"><summary><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg><span>More</span></summary><div class="menu sheet"><b class="sheet-h">More</b><a href="pos_approvals.html">Requests</a><a href="clients.html">Clients</a><a href="services.html">Services</a><a href="employees.html">Employees</a><a href="reports.html">Reports</a><a href="pos_products.html">Products</a><a href="employees_schedule.html">Schedule</a><a href="pos_giftcards.html">Gift Cards</a><a href="#">Forms</a><a href="#">Settings</a><a href="pos_drawer.html">Cash Drawer</a><a href="pos_z.html">Z Report</a><a href="payroll.html">Payroll</a><a href="sales.html">DaySmart Import</a><a href="audit.html">Audit Log</a><a href="../index.html">Log out</a></div></details></nav>
+<script>(function(){function fitBook(){if(window.innerWidth>820)return;var bar=document.querySelector('.bottombar');if(!bar)return;var limit=bar.getBoundingClientRect().top;document.querySelectorAll('.grid-wrap').forEach(function(g){var room=limit-g.getBoundingClientRect().top-12;if(room>180)g.style.maxHeight=room+'px';});}window.addEventListener('resize',fitBook);window.addEventListener('orientationchange',fitBook);window.addEventListener('load',function(){setTimeout(fitBook,40)});})();</script>
 <script>document.addEventListener("submit",e=>{e.preventDefault();alert("Demo preview: buttons don't save")},true);document.querySelectorAll("form:not([method=post])").forEach(f=>f.onsubmit=e=>{e.preventDefault()})</script></body></html>
